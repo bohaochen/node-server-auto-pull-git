@@ -1,5 +1,6 @@
 # node-server-auto-pull-git
 
+# 简单配置完成自动部署，基于nodejs+express+gitHub_Webhooks
 
 使用方法 
 
