@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/bohaochen/node-server-auto-pull-git#readme",
   "dependencies": {
-    "github-webhook-handler": "^1.0.0"
+    "connect-history-api-fallback": "^1.6.0",
+    "express": "^4.17.1",
+    "github-webhook-handler": "^1.0.0",
+    "http-proxy-middleware": "^1.0.3"
   }
 }
