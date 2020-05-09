@@ -20,4 +20,9 @@
     cd ./node-server-auto-pull-git
     node app.js
 
-6.具体的build操作  修改 build.sh  里面的配置，反向代理 以及单页spa应用指向问题  在app.js解决
+6.注意事项
+    1.具体的build操作，修改 build.sh里面的配置
+    2.反向代理 以及单页spa应用指向问题  在app.js解决
+    3.对应的监听webhooks请求的端口，要跟webhooks配置中Payload URL保持一致
+    4.对外暴露的页面端口默认为8080，想修改的话 在app.js解决
+
