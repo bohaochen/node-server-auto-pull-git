@@ -3,6 +3,7 @@ const http = require('http')
 const spawn = require('child_process').spawn
 const createHandler = require('github-webhook-handler')
 const express = require('express');
+var compression = require('compression')
 const history = require(`connect-history-api-fallback`);
 const {createProxyMiddleware } = require("http-proxy-middleware");
 
@@ -45,6 +46,8 @@ handler.on('push', e => {
       console.log(`${e.payload.repository.name}: ${data}`);
     });
     console.log(e.payload.repository.name, 'has rebuild');
+
+    app.use(compression());
 
     app.use('/api/', createProxyMiddleware(proxyOption));
 
