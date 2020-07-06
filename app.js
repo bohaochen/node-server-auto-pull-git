@@ -45,27 +45,27 @@ handler.on('Push Hook', e => {
   console.log(e.payload,"----");
   console.log(e.payload.repository.name,"----");
 
-  try {
-    const s = spawn('sh', ['../node-server-auto-pull-git/build.sh'], {
-      cwd: `../${e.payload.repository.name}`
-    })
-    s.stdout.on('data', (data) => {
-      console.log(`${e.payload.repository.name}: ${data}`);
-    })
-    s.stderr.on('data', (data) => {
-      console.log(`${e.payload.repository.name}: ${data}`);
-    });
-    console.log(e.payload.repository.name, 'has rebuild');
+  // try {
+  //   const s = spawn('sh', ['../node-server-auto-pull-git/build.sh'], {
+  //     cwd: `../${e.payload.repository.name}`
+  //   })
+  //   s.stdout.on('data', (data) => {
+  //     console.log(`${e.payload.repository.name}: ${data}`);
+  //   })
+  //   s.stderr.on('data', (data) => {
+  //     console.log(`${e.payload.repository.name}: ${data}`);
+  //   });
+  //   console.log(e.payload.repository.name, 'has rebuild');
 
-    app.use(compression());
+  //   app.use(compression());
 
-    app.use('/api/', createProxyMiddleware(proxyOption));
+  //   app.use('/api/', createProxyMiddleware(proxyOption));
 
-    app.use(history()); 
+  //   app.use(history()); 
   
-    app.use(express.static(`../${e.payload.repository.name}/dist`))
+  //   app.use(express.static(`../${e.payload.repository.name}/dist`))
 
-  } catch (e) { }
+  // } catch (e) { }
 
 
 })
