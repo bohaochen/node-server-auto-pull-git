@@ -35,7 +35,10 @@ handler.on('error', err => {
   console.error('Error:', err.message)
 })
 
-handler.on('push', e => {
+//github
+//handler.on('push', e => {
+//gitee
+handler.on('Push Hook', e => {
   try {
     const s = spawn('sh', ['../node-server-auto-pull-git/build.sh'], {
       cwd: `../${e.payload.repository.name}`
@@ -63,6 +66,6 @@ handler.on('push', e => {
 
 
 
-app.listen(8080, () => {
-  console.log(`App listening at port 8080`)
+app.listen(8081, () => {
+  console.log(`App listening at port 8081`)
 })
