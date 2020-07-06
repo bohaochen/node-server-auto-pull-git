@@ -1,7 +1,8 @@
 
 const http = require('http')
 const spawn = require('child_process').spawn
-const createHandler = require('github-webhook-handler')
+// const createHandler = require('github-webhook-handler');
+const createHandler = require('gitee-webhook-middleware');
 const express = require('express');
 var compression = require('compression')
 const history = require(`connect-history-api-fallback`);
