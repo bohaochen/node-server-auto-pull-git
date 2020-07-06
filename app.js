@@ -40,10 +40,36 @@ handler.on('error', err => {
 
 //github
 //handler.on('push', e => {
+    // try {
+  //   const s = spawn('sh', ['../node-server-auto-pull-git/build.sh'], {
+  //     cwd: `../${e.payload.repository.name}`
+  //   })
+  //   s.stdout.on('data', (data) => {
+  //     console.log(`${e.payload.repository.name}: ${data}`);
+  //   })
+  //   s.stderr.on('data', (data) => {
+  //     console.log(`${e.payload.repository.name}: ${data}`);
+  //   });
+  //   console.log(e.payload.repository.name, 'has rebuild');
+
+  //   app.use(compression());
+
+  //   app.use('/api/', createProxyMiddleware(proxyOption));
+
+  //   app.use(history()); 
+  
+  //   app.use(express.static(`../${e.payload.repository.name}/dist`))
+
+  // } catch (e) { }
+// })
+
 //gitee
 handler.on('Push Hook', e => {
-  console.log(e.payload,"----");
-  console.log(e.payload.repository.name,"----");
+
+  var projectStrArr = e.payload.hook_url.split("/hooks")[0].split("/");
+  var projectName = projectStrArr[projectStrArr.length-1];
+  console.log(projectStrArr,"----");
+  console.log(projectName,"----");
 
   // try {
   //   const s = spawn('sh', ['../node-server-auto-pull-git/build.sh'], {
