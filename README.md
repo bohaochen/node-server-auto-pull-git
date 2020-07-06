@@ -12,7 +12,7 @@
     设置Content type（application/json）
     设置Secret（123456）
 
-3.进入服务器，拉取本项目并安装依赖 npm install (建议 cnpm install)
+3.进入服务器，拉取本项目并安装依赖 npm install (建议 cnpm install),启动服务pm2 app.js
 
 4.拉取要自动部署的项目，跟本项目处于同一文件夹内
 
