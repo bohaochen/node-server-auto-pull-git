@@ -21,6 +21,7 @@
     "connect-history-api-fallback": "^1.6.0",
     "express": "^4.17.1",
     "github-webhook-handler": "^1.0.0",
+    "gitee-webhook-middleware": "^1.0.0",
     "http-proxy-middleware": "^1.0.3"
   }
 }
