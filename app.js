@@ -1,8 +1,15 @@
 
 const http = require('http')
 const spawn = require('child_process').spawn
+// github用
 // const createHandler = require('github-webhook-handler');
+// const handler = createHandler({
+//   path: '/webhook',
+//   secret: '123456'
+// })
+// gitee用
 const createHandler = require('gitee-webhook-middleware');
+const handler = createHandler({ path: '/webhook', token: '123456' });
 const express = require('express');
 var compression = require('compression')
 const history = require(`connect-history-api-fallback`);
@@ -18,10 +25,6 @@ var proxyOption ={
 
 var app = express();
 
-const handler = createHandler({
-  path: '/',
-  secret: '123456'
-})
 
 //监听7777接口 为github webhook 做相应，触发自动构建
 http.createServer((req, res) => {
