@@ -42,6 +42,9 @@ handler.on('error', err => {
 //handler.on('push', e => {
 //gitee
 handler.on('Push Hook', e => {
+  console.log(e.payload,"----");
+  console.log(e.payload.repository.name,"----");
+
   try {
     const s = spawn('sh', ['../node-server-auto-pull-git/build.sh'], {
       cwd: `../${e.payload.repository.name}`
