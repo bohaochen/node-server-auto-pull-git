@@ -8,8 +8,8 @@ const spawn = require('child_process').spawn
 //   secret: '123456'
 // })
 // gitee用
-const createHandler = require('gitee-webhook-middleware');
-const handler = createHandler({ path: '/webhook', token: '123456' });
+const createHandler = require('gitee-webhook-handler');
+const handler = createHandler({ path: '/webhook', secret: '123456' });
 const express = require('express');
 var compression = require('compression')
 const history = require(`connect-history-api-fallback`);
